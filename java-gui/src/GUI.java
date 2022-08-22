@@ -1,18 +1,28 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GUI {
+public class GUI implements ActionListener {
+
+    int counts = 0;
+    JLabel label;
+    JFrame frame;
+    JPanel panel;
+
     public GUI(){
 
         JFrame frame = new JFrame();
 
         JButton button = new JButton("Click me");
-
+        button.addActionListener(this);
+         label = new JLabel("Number of clicks: 0");
 
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel.setLayout(new GridLayout(0, 1));
         panel.add(button);
+        panel.add(label);
 
         frame.add(panel, BorderLayout.CENTER); // Add panel to frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Set what happens when they close the frame
@@ -24,6 +34,13 @@ public class GUI {
     public static void main(String[] args) {
         new GUI();
         //yes
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+//        Once button clicked, increment count
+        count++;
 
     }
 }
