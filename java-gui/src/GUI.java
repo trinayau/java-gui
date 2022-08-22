@@ -15,8 +15,11 @@ public class GUI implements ActionListener {
         frame = new JFrame();
 
         JButton button = new JButton("Click me");
+        JButton resetButton = new JButton("Reset");
         button.addActionListener(this);
+        resetButton.addActionListener(this);
          label = new JLabel("Number of clicks: 0");
+
 
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
