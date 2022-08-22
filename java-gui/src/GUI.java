@@ -5,14 +5,14 @@ import java.awt.event.ActionListener;
 
 public class GUI implements ActionListener {
 
-    int counts = 0;
+    int count = 0;
     JLabel label;
     JFrame frame;
     JPanel panel;
 
     public GUI(){
 
-        JFrame frame = new JFrame();
+        frame = new JFrame();
 
         JButton button = new JButton("Click me");
         button.addActionListener(this);
@@ -41,6 +41,7 @@ public class GUI implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 //        Once button clicked, increment count
         count++;
+        label.setText("Number of clicks: " + count);
 
     }
 }
